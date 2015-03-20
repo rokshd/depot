@@ -6,4 +6,8 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: 'URL incorrect. Must be GIF, JPG and PNG. '
 	}
+
+	def self.latest
+		Product.order(:updated_at).last
+	end
 end
