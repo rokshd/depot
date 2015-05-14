@@ -1,6 +1,8 @@
 class LineItemsController < ApplicationController
 	include CurrentCart
-	before_action :set_cart, only: [:create]
+	before_action :set_cart, only: [:create, :decrease]
+# https://pragprog.com/wikis/wiki/Pt-F-2-31/version/31
+#	before_action :set_cart, only: [:create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
